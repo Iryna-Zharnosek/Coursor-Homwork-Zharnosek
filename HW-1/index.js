@@ -25,7 +25,7 @@ const priceSumFloor = priceProduct1Floor+priceProduct2Floor+priceProduct3Floor;
 console.log( priceSumFloor);
 
 //Виведіть суму товарів округлену до сотень. (Наприклад якщо вийшло 260, то виведіть 300)
-const priceSumRoundingPlus  = Math.ceil(priceSumFloor/100)*100;
+const priceSumRoundingPlus  = Math.round(priceSumFloor/100)*100;
 console.log(priceSumRoundingPlus);
 
 //Виведіть булеве значення: чи є сума всіх товарів (округлена в меншу сторону) парним чи непарним числом?
