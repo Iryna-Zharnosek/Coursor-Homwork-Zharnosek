@@ -25,10 +25,8 @@ const priceSumFloor = priceProduct1Floor+priceProduct2Floor+priceProduct3Floor;
 console.log( priceSumFloor);
 
 //Виведіть суму товарів округлену до сотень. (Наприклад якщо вийшло 260, то виведіть 300)
-const priceProduct1RoundingPlus  = Math.ceil(priceProduct1 /100)*100;
-const priceProduct2RoundingPlus  = Math.ceil(priceProduct2 /100)*100;
-const priceProduct3RoundingPlus  = Math.ceil(priceProduct3 /100)*100;
-console.log(priceProduct1RoundingPlus+", "+priceProduct2RoundingPlus+", "+priceProduct3RoundingPlus);
+const priceSumRoundingPlus  = Math.ceil(priceSumFloor/100)*100;
+console.log(priceSumRoundingPlus);
 
 //Виведіть булеве значення: чи є сума всіх товарів (округлена в меншу сторону) парним чи непарним числом?
 function isEven(number) { 
@@ -51,16 +49,33 @@ const invoice = (priceProduct2-discount).toFixed(2);
 const netProfit = (priceProduct2/2-(priceProduct2-invoice)).toFixed(2);
 console.log("discount: "+ discount +"\r\n"+ "invoice: "+invoice+"\r\n"+ "Profit: "+netProfit)
 
-console.log("Максимальна ціна: " + priceMax +"\r\n"+ 
-"Мінімальна ціна: " + priceMin +"\r\n"+ 
-"Вартість всіх товарів: " + priceSum +"\r\n"+
-"Сума товарів без копійок округлена в меньшу сторону: " + priceSumFloor +"\r\n"+
-"Ціна товару округленна до сотень: "  + priceProduct1RoundingPlus+", "+priceProduct2RoundingPlus+", "+priceProduct3RoundingPlus +"\r\n"+
-"Сумма всіх товарів парне чи непарне: " + priceSumInt +"\r\n"+
-"Решта при оплаті 500 грн.: " + remainderSum +"\r\n"+
-"Середня ціна округлена до сотих: " + averageValue  +"\r\n"+
-"Випадкова знижка: " + discount  +"\r\n"+
-"Ціна продукту: " + priceProduct2  +"\r\n"+
-"Рахунок зі знижкою: " + invoice  +"\r\n"+
-"Чистий прибуток: " + netProfit  +"\r\n"
+console.log(`Максимальна ціна: ${priceMax}
+Мінімальна ціна: ${priceMin}
+Вартість всіх товарів: ${priceSum}
+Сума товарів без копійок округлена в меньшу сторону: ${priceSumFloor}
+Ціна товару округленна до сотень: ${priceSumRoundingPlus}
+Сумма всіх товарів парне чи непарне: ${priceSumInt}
+Решта при оплаті 500 грн.: ${remainderSum}
+Середня ціна округлена до сотих: ${averageValue}
+Випадкова знижка: ${discount}
+Ціна продукту: ${priceProduct2}
+Рахунок зі знижкою: ${invoice}
+Чистий прибуток: ${netProfit}`
 )
+
+ document.write(`Максимальна ціна: ${priceMax}
+                <br/>Мінімальна ціна: ${priceMin}
+                <br/>Вартість всіх товарів: ${priceSum}
+                <br/>Сума товарів без копійок округлена в меньшу сторону: ${priceSumFloor}
+                <br/>Ціна товару округленна до сотень: ${priceSumRoundingPlus}
+                <br/>Сумма всіх товарів парне чи непарне: ${priceSumInt}
+                <br/>Решта при оплаті 500 грн.: ${remainderSum}
+                <br/>Середня ціна округлена до сотих: ${averageValue}
+                <br/>Випадкова знижка: ${discount}
+                <br/>Ціна продукту: ${priceProduct2}
+                <br/>Рахунок зі знижкою: ${invoice}
+                <br/>Чистий прибуток: ${netProfit}`
+ )
+// document.write("<br/>Максимальна ціна: " + priceMax )
+// document.write("<br/>Максимальна ціна: " + priceMax )
+// document.write("<br/>Максимальна ціна: " + priceMax )
