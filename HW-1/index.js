@@ -46,9 +46,9 @@ console.log(averageValue)
 
 //Створіть змінну, в якої збережіть випадкову знижку (використовуйте функцію Math.random). 
 const discount = Math.floor(Math.random() * 100) + 1;
-const invoice = (priceProduct2Floor - discount).toFixed(2);
-const netProfit = (((priceProduct2Floor / 2) - discount)).toFixed(2);
-console.log("discount: "+ discount +"\r\n"+ "invoice: "+invoice+"\r\n"+ "Profit: "+netProfit)
+const invoice = (priceProduct2 - ((priceProduct2 * discount) / 100)).toFixed(2);
+const netProfit = (((priceProduct2 / 2) - ((priceProduct2 * discount) / 100))).toFixed(2);
+console.log("discount: "+ discount +"% \r\n"+ "invoice: "+invoice+"\r\n"+ "Profit: "+netProfit)
 
 
 console.log(`Максимальна ціна: ${priceMax}
@@ -59,8 +59,8 @@ console.log(`Максимальна ціна: ${priceMax}
 Сумма всіх товарів парне чи непарне: ${priceSumInt}
 Решта при оплаті 500 грн.: ${remainderSum}
 Середня ціна округлена до сотих: ${averageValue}
-Випадкова знижка: ${discount}
-Ціна продукту: ${priceProduct2Floor}
+Випадкова знижка: ${discount}%
+Ціна продукту: ${priceProduct2}
 Рахунок зі знижкою: ${invoice}
 Чистий прибуток: ${netProfit}`
 )
