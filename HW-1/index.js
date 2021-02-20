@@ -73,7 +73,7 @@ console.log(`Максимальна ціна: ${priceMax}
                 <br/>Сумма всіх товарів парне чи непарне: ${priceSumInt}
                 <br/>Решта при оплаті 500 грн.: ${remainderSum}
                 <br/>Середня ціна округлена до сотих: ${averageValue}
-                <br/>Випадкова знижка: ${discount}
+                <br/>Випадкова знижка: ${discount}%
                 <br/>Ціна продукту: ${priceProduct2}
                 <br/>Рахунок зі знижкою: ${invoice}
                 <br/>Чистий прибуток: ${netProfit}`
