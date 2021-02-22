@@ -28,6 +28,7 @@ let sumEven = 0;
         }
     }
 
+
 document.write(`Перше число ${firstNumber}, <br/> Друге число ${secondNumber}, <br/> Булеве значення ${evenPass}, <br/> Сума  ${sumEven}`);
 
 console.log(`Перше число: ${firstNumber}, 
