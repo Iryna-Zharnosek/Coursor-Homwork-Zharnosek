@@ -2,17 +2,17 @@
 let firstNumber; 
 
 do {
-    firstNumber = parseInt(prompt("Enter the first number"));
-} while (Number.isNaN(firstNumber));
+    firstNumber = +prompt("Enter the first number");
+} while (!Number.isInteger(firstNumber));
 
 let secondNumber;
 
 do {
-    secondNumber = parseInt(prompt(`Your first number ${firstNumber}, enter the second number greater than the first`));
-} while (Number.isNaN(secondNumber));
+    secondNumber = +prompt(`Your first number ${firstNumber}, enter the second number greater than the first`);
+} while (!Number.isInteger(secondNumber));
 
 // получить ответ у пользователя пропускать парные числа или нет
-const evenPass = confirm(`Skip even numbers?`);
+const evenPass = confirm(`Skip the couple numbers?`);
 
 // расчет суммы чисел в зависимости от ответа evenPass
 let sumEven = 0;
@@ -29,10 +29,10 @@ let sumEven = 0;
     }
 
 
-document.write(`Перше число ${firstNumber}, <br/> Друге число ${secondNumber}, <br/> Булеве значення ${evenPass}, <br/> Сума  ${sumEven}`);
+document.write(`Перше число: ${firstNumber} <br/> Друге число: ${secondNumber} <br/> Пропускати парні числа?: ${evenPass} <br/> Сума: ${sumEven}`);
 
-console.log(`Перше число: ${firstNumber}, 
-Друге число: ${secondNumber},
-Булеве значення: ${evenPass}, 
+console.log(`Перше число: ${firstNumber} 
+Друге число: ${secondNumber}
+Пропускати парні числа?: ${evenPass}
 Cума: ${sumEven}`
 );
