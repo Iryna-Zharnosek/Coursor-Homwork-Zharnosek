@@ -18,7 +18,7 @@ const evenPass = confirm(`Skip the couple numbers?`);
 let sumEven = 0;
 
     for(var i = firstNumber; i <= secondNumber; i++){
-        if (evenPass === true) {
+        if (evenPass) {
             if(i % 2 === 0) {
                 continue;			
             } 
