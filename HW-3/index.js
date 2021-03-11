@@ -70,7 +70,7 @@ const randomNumber = getRandomNumber(10,87);
 // Функція №6
 //Створити функцію, яка рахує скільки разів певна буква повторюється в слові. Приклад: countLetter("а", "Асталавіста") -> 4
 
-let str = "fdsfsgsdggfhfhtrhrgsdfregsrgrsg";
+let strfun5 = "fdsfsgsdggfhfhtrhrgsdfregsrgrsg";
 let letter = "f";
 
 function countLetter(st,letter) {
@@ -83,57 +83,86 @@ function countLetter(st,letter) {
   return count;
 }
 
-const countLet = countLetter(str, letter);
+const countLet = countLetter(strfun5, letter);
 
 // Функція №7
 //Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку. 
 //Приклад: convertCurrency("100$") -> 2500 грн. або convertCurrency("2500UAH") -> 100$
 //Врахуйте, інші валюти не конвертуються, потрібно виводити помилку, і також регістр uah не має значення.
 
-function currencyConverter(sum, currency) {
-    let courseUSA = 27.72;
-    let courseUAH = 0.036;
-    if (currency === "USA") {
-        return sum = sum
-    }
-
-
+function currencyConverter(sum) {
+    let convertIndex = 27.72
+    let convertedNumber = parseInt(sum)
+    if (sum.includes('$')) convertedNumber *= convertIndex
+        else if (sum.toLowerCase().includes('uah')) convertedNumber /= convertIndex
+            else convertedNumber = 'ERROR';
+    
+    return convertedNumber
 }
 
 // Функція №8
 //Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам.
 //Приклад: getRandomPassword(4) -> 1875, getRandomPassword() -> 87240124
 
-
-
-
+function getRandomPassword(num) {
+    if(num) length = num
+        else length = 8;
+        charset = "0123456789";
+        password = "";
+    for (var i = 0, n = charset.length; i < length; ++i) {
+        password += charset.charAt(Math.floor(Math.random() * n));
+    }
+    return password;
+}
 
 // Функція №9
 //Створіть функцію, яка видаляє всі букви з речення. Приклад: deleteLetters('a', "blablabla") -> "blblbl"
 
+function deleteLetters(letter,str){
+    let newLetter = letter.toLowerCase();
+    let newStr = str.toLowerCase();
+    let newWord = '';
+    for (let i = 0; i < newStr.length; i++){
+        if (newStr[i] !== newLetter){
+            newWord += newStr[i];
+        }
+    }
+    return newWord;
+}
 
 
 // Функція №10
 //Створіть функцію, яка перевіряє, чи є слово паліндромом. Приклад: isPalyndrom("мадам") -> true, isPalyndrom("кокос") -> false, isPalyndrom("Я несу гусеня") -> true
 
-
+function isPalyndrom(str){
+    str = str.replace(/\s/g, '').toLowerCase();
+    for (let i = 0; i < str.length/2; i++){
+        if (str[i] !== str[str.length-1-i]){
+            return false;
+        }
+    }
+    return true;
+}
+const strPalindrom = "Я несу гусеня";
+const strPalindromNew = isPalyndrom(strPalindrom);
 
 // Функція №11
-//Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") -> "сктдеим"
+//Створіть функцію, яка видалить з речення букви, які зустрічаються більше 1 разу. 
+//Приклад: deleteDuplicateLetter("Бісквіт був дуже ніжним") -> "сктдеим"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+function deleteDuplicateLetter(str){
+    str = str.toLowerCase();
+    let newStr = "";
+    for (let i = 0; i < str.length; i++){
+        let countLetters = str.split(str[i]).length-1;
+        if (countLetters > 1){
+            continue;
+        }
+        newStr += str[i];
+    }
+    return newStr;
+}
+const Duplicate = "Бісквіт був дуже ніжним";
 
 console.log(`Функція №1: самая большая цифра ${maxNumbre} в числе ${num}
 Функція №2 варіант 1 получили значение 2 в 5 степени ${degreeOf1}
@@ -141,12 +170,12 @@ console.log(`Функція №1: самая большая цифра ${maxNumb
 Функція №3 Передаю ${firstName} получаю ${newFirstName}
 Функція №4 Передаю ${salary} получаю сумму с вычитом налога ${salaryClean}
 Функція №5 Передали числа 10 и 87 получили рандомное число ${randomNumber}
-Функция №6 Передали слово ${str} спросили букву ${letter} получили ${countLet} в слове
-Функція №7
-Функція №8
-Функція №9
-Функція №10
-Функція №11
+Функция №6 Передали слово ${strfun5} спросили букву ${letter} получили ${countLet} в слове
+Функція №7 Конвертор 100$ ${currencyConverter("100$")}, 100UAH ${currencyConverter("100UAH")}, ответ валюта не соответствет ни $ ни UAH ${currencyConverter("100EUR")}
+Функція №8 Password ${getRandomPassword(12)} длина 12, ${getRandomPassword()} длина не задана
+Функція №9 Передали в функцию букву "f" слово "wpoiwnpjfeifrijvneceokpfrvfh", результат ${deleteLetters("f", "wpoiwnpjfeifrijvneceokpfrvfh")}
+Функція №10 Проверка строки ${strPalindrom}, результат функции ${strPalindromNew}
+Функція №11  Удаляем повторяющие буквы , передаем "${Duplicate}" получаем : ${deleteDuplicateLetter(Duplicate)}
 `)
 
 
