@@ -36,7 +36,7 @@ function getMode(...numbers) {
         maxValue = elem[1];
         arrayMode = elem[0];
       }
-    });  
+    });
 
     return arrayMode;
 }
