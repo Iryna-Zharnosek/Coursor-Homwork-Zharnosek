@@ -70,11 +70,11 @@ console.log(`Оцінки студента`, ostap.marks);
 console.log(`Середній бал студента`, ostap.getAverageMark());
 
 ostap.dismiss();
-ostap.marks = 2;
-console.log(`Виключення студента `,ostap.marks);
+ostap.marks = 5;
+console.log(`Виключення студента `, ostap.marks);
 
 ostap.recover();
-ostap.marks = 3;
+ostap.marks = 5;
 console.log(`Поновлення студента`, ostap.marks);
 
 // Advanced
