@@ -62,16 +62,16 @@ const salaryClean = netSalary(salary);
 // Функція №5
 //Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M. Приклад: getRandomNumber(1, 10) -> 5
 
-function getRandomNumber(num1,num2){
-    return Math.floor(Math.random() *(num2 - num1));
+function getRandomNumber(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const randomNumber = getRandomNumber(10,87);
 
 // Функція №6
 //Створити функцію, яка рахує скільки разів певна буква повторюється в слові. Приклад: countLetter("а", "Асталавіста") -> 4
 
-let strfun5 = "fdsfsgsdggfhfhtrhrgsdfregsrgrsg";
-let letter = "f";
+const strFun = "fdsfsgsdggfhfhtrhrgsdfregsrgrsg";
+const letter = "f";
 
 function countLetter(st,letter) {
   let count = 0;
@@ -83,7 +83,7 @@ function countLetter(st,letter) {
   return count;
 }
 
-const countLet = countLetter(strfun5, letter);
+const countLet = countLetter(strFun, letter);
 
 // Функція №7
 //Створіть функцію, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку. 
@@ -91,7 +91,7 @@ const countLet = countLetter(strfun5, letter);
 //Врахуйте, інші валюти не конвертуються, потрібно виводити помилку, і також регістр uah не має значення.
 
 function currencyConverter(sum) {
-    let convertIndex = 27.72
+    const convertIndex = 27.72
     let convertedNumber = parseInt(sum)
     if (sum.includes('$')) convertedNumber *= convertIndex
         else if (sum.toLowerCase().includes('uah')) convertedNumber /= convertIndex
@@ -104,7 +104,7 @@ function currencyConverter(sum) {
 //Створіть функцію генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам.
 //Приклад: getRandomPassword(4) -> 1875, getRandomPassword() -> 87240124
 
-function getRandomPassword(num) {
+function getRandomPassword(num = 8) {
     if(num) length = num
         else length = 8;
         charset = "0123456789";
@@ -119,8 +119,8 @@ function getRandomPassword(num) {
 //Створіть функцію, яка видаляє всі букви з речення. Приклад: deleteLetters('a', "blablabla") -> "blblbl"
 
 function deleteLetters(letter,str){
-    let newLetter = letter.toLowerCase();
-    let newStr = str.toLowerCase();
+    const newLetter = letter.toLowerCase();
+    const newStr = str.toLowerCase();
     let newWord = '';
     for (let i = 0; i < newStr.length; i++){
         if (newStr[i] !== newLetter){
