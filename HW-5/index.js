@@ -65,18 +65,17 @@ function getMedian(...numbers) {
     arrayOfIntegers = numbers.filter(num => Number.isInteger(num))
 
     const medianOfArray = arrayOfIntegers.sort((a, b) => (a - b)).reduce(function(previosValue, num, ind, arr) {
-        if(arr.length % 2 == 0) {
-            ind1 = arr.length / 2
-            ind2 = arr.length / 2 + 1 
-            return num = (arr[ind1] + arr[2]) / 2
-        } else {
-            ind = Math.floor(arr.length / 2) 
-            return num = arr[ind]
-        }
+      if(arr.length % 2 === 0) {
+        ind1 = arr.length / 2 - 1
+        ind2 = arr.length / 2  
+        return num = (arr[ind1] + arr[ind2]) / 2
+      } else {
+        ind = Math.floor(arr.length / 2) 
+        return num = arr[ind]
+      }
     })
-
     return medianOfArray
-}
+  }
 
 console.log('Медіанa:', getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
 
@@ -104,7 +103,7 @@ console.log('Кількість чисел більших 0: ', countPositiveNum
 //7.Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 
 function getDividedByFive(...numbers) {
-    const withoutRemainder = numbers.filter(num => num % 5 == 0)
+    const withoutRemainder = numbers.filter(num => num % 5 === 0)
 
     return withoutRemainder
 }
